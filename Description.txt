@@ -1,0 +1,10 @@
+Project done on Sentiment Analysis on Movie Reviews
+
+Description: Use a recurrent neural network (RNN) to analyze sentiments from movie reviews (positive or negative).
+
+Skills: Work with NLP techniques and RNN architectures like LSTM or GRU.
+
+Dataset: IMDB movie reviews dataset.
+
+More notebook versions with hyperparameter tuning can be found in the kaggle link below
+https://www.kaggle.com/code/sarthakhal/sentiment-analysis-ipynb
