@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 8000;
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log("MongoDB Connection Error:", err));
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
@@ -46,6 +46,10 @@ app.use("/blog", blogRoute);
 
 app.all("*", (req, res) => {
   res.status(404).send("Page Not Found");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 module.exports = app;

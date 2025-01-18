@@ -625,8 +625,6 @@ node_modules/
 dist/
 build/
 
-# Tailwind CSS Generated File
-output.css
 
 # Environment Variables
 .env
@@ -674,3 +672,5 @@ coverage/
 *.swo
 
 .vercel
+
+uploads/
