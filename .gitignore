@@ -673,3 +673,4 @@ coverage/
 *.bak
 *.swo
 
+.vercel
