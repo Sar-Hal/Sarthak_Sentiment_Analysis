@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Blog App</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <% blogs.forEach(blog => { %>
+      <div class="bg-white shadow-md rounded overflow-hidden">
+        <div class="p-4">
+          <h2 class="font-bold text-lg"><%= blog.title %></h2>
+          <a href="/blog/<%= blog._id %>" class="mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<nav class="bg-blue-800 hover:w-full">
+  <div class="container mx-auto px-4 flex items-center justify-between py-4">
+    <a class="text-white text-lg font-bold" href="/">Blog App</a>
+    <div>
+      <ul class="flex space-x-4">
+        <li>
+          <a class="text-gray-300 hover:text-white" href="/">Home</a>
+        </li>
+        <% if (locals.user) { %>
+        <li>
+          <a class="text-gray-300 hover:text-white" href="/blog/add-new">Add Blog</a>
+        </li>
+        <li class="relative">
+          <a
+            class="text-gray-300 hover:text-white cursor-pointer"
+            href="#"
+            id="dropdownToggle"
+          >
+            Your Profile
+          </a>
+          <ul
+            class="absolute hidden bg-blue-700 text-white mt-2 rounded shadow-md"
+            id="dropdownMenu"
+          >
+            <li>
+              <a class="block px-4 py-2 hover:bg-gray-600" href="/user/logout">Logout</a>
+            </li>
+          </ul>
+        </li>
+        
+        <% } else {%>
+        <li>
+          <a class="text-gray-300 hover:text-white" href="/user/signup">Create Account</a>
+        </li>
+        <li>
+          <a class="text-gray-300 hover:text-white" href="/user/signin">Signin</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('dropdownToggle');
+    const menu = document.getElementById('dropdownMenu');
+
+    toggle.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent the default link behavior
+      menu.classList.toggle('hidden');
+    });
+
+    // Optional: Close the dropdown when clicking outside of it
+    document.addEventListener('click', function (event) {
+      if (!toggle.contains(event.target) && !menu.contains(event.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  });
+</script>
